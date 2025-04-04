@@ -9,6 +9,7 @@ Make sure you have **Python 3** and **pip** installed. Run the following:
     pip3 install sphinx sphinx_rtd_theme
 
 (As of Apr. 4, 2025, do this:)
+
     brew install sphinx-doc
 
 # Edit
