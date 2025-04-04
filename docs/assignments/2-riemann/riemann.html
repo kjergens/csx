@@ -1,203 +1,51 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Riemann Sum Assignment &mdash; The CSX Book  documentation</title>
-  
 
-  
-  
-  
-  
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../../',
-              VERSION:'',
-              LANGUAGE:'None',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>Riemann Sum Assignment &#8212; The CSX Book  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Projectile Assignment" href="../3-projectile/projectile.html" />
-    <link rel="prev" title="Getting Started" href="../1-getting-started/getting-started.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
+    <link rel="prev" title="Getting Started" href="../1-getting-started/getting-started.html" />
    
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="../../index.html" class="icon icon-home"> The CSX Book
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Assignments:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../1-getting-started/getting-started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Riemann Sums</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#approximating-area-under-a-curve">Approximating Area Under a Curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#classes-and-methods">Classes and Methods</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-abstractriemann-class">The AbstractRiemann Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#abstract-classes-and-methods">Abstract Classes and Methods</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-package-namespace">1. Create a Package Namespace</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#abstractriemann-class">2. AbstractRiemann Class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#righthandplot-lefthandplot-and-trapezoidplot">3. RightHandPlot, LeftHandPlot and TrapezoidPlot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#test-classes">4. Test Classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#riemannapp">5. RiemannApp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#analysis">6. Analysis</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#further-resources">Further Resources</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#java-computer-science">Java/Computer Science</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#math">Math</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6-orbital/orbital.html">Orbitals</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">The CSX Book</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
-      <li>Riemann Sum Assignment</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="../../_sources/assignments/2-riemann/riemann.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
 
   
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
             
-  <div class="section" id="riemann-sum-assignment">
-<h1>Riemann Sum Assignment<a class="headerlink" href="#riemann-sum-assignment" title="Permalink to this headline">¶</a></h1>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/fig1.svg"><img alt="../../_images/fig1.svg" src="../../_images/fig1.svg" width="25%" /></a>
-</div>
-<div class="section" id="approximating-area-under-a-curve">
-<h2>Approximating Area Under a Curve<a class="headerlink" href="#approximating-area-under-a-curve" title="Permalink to this headline">¶</a></h2>
+  <section id="riemann-sum-assignment">
+<h1>Riemann Sum Assignment<a class="headerlink" href="#riemann-sum-assignment" title="Link to this heading">¶</a></h1>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/fig1.svg"><img alt="../../_images/fig1.svg" src="../../_images/fig1.svg" style="width: 25%;" />
+</a>
+</figure>
+<section id="approximating-area-under-a-curve">
+<h2>Approximating Area Under a Curve<a class="headerlink" href="#approximating-area-under-a-curve" title="Link to this heading">¶</a></h2>
 <p>The focus of this assignment will be defining and calculating
 the area under a curve. The following slides contain an introduction to the concept of <strong>Riemann sums</strong>, which
 provide a way of approximating this area:</p>
-<p><a class="reference download internal" href="../../_downloads/RiemannSumSlides.pdf" download=""><code class="xref download docutils literal"><span class="pre">Area</span> <span class="pre">Under</span> <span class="pre">a</span> <span class="pre">Curve</span> <span class="pre">Slides</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/35e97a57a76d12a87c46207a9ce41312/RiemannSumSlides.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Area</span> <span class="pre">Under</span> <span class="pre">a</span> <span class="pre">Curve</span> <span class="pre">Slides</span></code></a></p>
 <p>We have seen that as the width of the rectangles in a Riemann sum gets smaller
 the approximation to the area under the curve improves. In some cases, we’ve
 been able to use this fact to compute the exact value of the area under the
@@ -207,50 +55,53 @@ hand.</p>
 adding up many small areas to get an approximation of the total area under the
 curve. Computers are good at this kind of repetitive task: while there are many
 steps, the calculation involved in each step is simple. Remember how to tell a program to do the same thing over and over using
-<code class="docutils literal"><span class="pre">for</span></code> and <code class="docutils literal"><span class="pre">while</span></code>-loops? Now, you will apply this knowledge to create a
+<code class="docutils literal notranslate"><span class="pre">for</span></code> and <code class="docutils literal notranslate"><span class="pre">while</span></code>-loops? Now, you will apply this knowledge to create a
 Java class which evaluates a given Riemann sum.</p>
-<div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" width="80%" /></a>
-<p class="caption"><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal"><span class="pre">for</span></code>-loop.
-The more iterations (steps) of the loop, the better the approximation.</span></p>
-</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/fig2.svg"><img alt="../../_images/fig2.svg" src="../../_images/fig2.svg" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">The individual rectangles’ areas can be added up using a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop.
+The more iterations (steps) of the loop, the better the approximation.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition-optional-exercise admonition">
-<p class="first admonition-title">Optional Exercise</p>
-<p>The syntax of <code class="docutils literal"><span class="pre">for</span></code>-loops in Java can be hard to remember.</p>
-<ul class="last simple">
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to print the first 100 positive integers.</li>
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop to add up the first 100 positive integers.</li>
-<li>Use a <code class="docutils literal"><span class="pre">for</span></code>-loop and an array to find the mean of the following ten numbers:
-<code class="docutils literal"><span class="pre">28.2,</span> <span class="pre">14.7,</span> <span class="pre">10.3,</span> <span class="pre">-2.0,</span> <span class="pre">55.8,</span> <span class="pre">10.3,</span> <span class="pre">0.2,</span> <span class="pre">1.0,</span> <span class="pre">0.0,</span> <span class="pre">25.1</span></code></li>
+<p class="admonition-title">Optional Exercise</p>
+<p>The syntax of <code class="docutils literal notranslate"><span class="pre">for</span></code>-loops in Java can be hard to remember.</p>
+<ul class="simple">
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop to print the first 100 positive integers.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop to add up the first 100 positive integers.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop and an array to find the mean of the following ten numbers:
+<code class="docutils literal notranslate"><span class="pre">28.2,</span> <span class="pre">14.7,</span> <span class="pre">10.3,</span> <span class="pre">-2.0,</span> <span class="pre">55.8,</span> <span class="pre">10.3,</span> <span class="pre">0.2,</span> <span class="pre">1.0,</span> <span class="pre">0.0,</span> <span class="pre">25.1</span></code></p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="classes-and-methods">
-<h2>Classes and Methods<a class="headerlink" href="#classes-and-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes-and-methods">
+<h2>Classes and Methods<a class="headerlink" href="#classes-and-methods" title="Link to this heading">¶</a></h2>
 <p>You will create several classes for this assignment: a base class called
-<code class="docutils literal"><span class="pre">AbstractRiemann</span></code> and then child classes for each of the Riemann sum rules.</p>
-<div class="section" id="the-abstractriemann-class">
-<h3>The AbstractRiemann Class<a class="headerlink" href="#the-abstractriemann-class" title="Permalink to this headline">¶</a></h3>
-<p>The first class which you will create for this assignment, <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, will
+<code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> and then child classes for each of the Riemann sum rules.</p>
+<section id="the-abstractriemann-class">
+<h3>The AbstractRiemann Class<a class="headerlink" href="#the-abstractriemann-class" title="Link to this heading">¶</a></h3>
+<p>The first class which you will create for this assignment, <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>, will
 contain the majority of your code for calculating Riemann sums. Start by
-<a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">opening up the documentation</a> for <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. The
+<a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">opening up the documentation</a> for <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>. The
 linked page, known as a <strong>JavaDoc</strong>, has information about each of the methods
-of the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class. This includes the methods’ <strong>parameters</strong> (inputs)
+of the <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> class. This includes the methods’ <strong>parameters</strong> (inputs)
 and their <strong>return values</strong> (outputs). Your job will be to create a class
-which conforms to the given JavaDoc—the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you create
+which conforms to the given JavaDoc—the <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> class which you create
 should contain each of the listed methods, and each method should behave as
 described in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a>, taking in the same parameters and outputting the
 same type of return value.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Java programmers frequently use <strong>JavaDocs</strong> to document their code so that
+<p class="admonition-title">Note</p>
+<p>Java programmers frequently use <strong>JavaDocs</strong> to document their code so that
 other people can understand what it does. JavaDocs are created by
 writing comments in your source code using a specific format; you can find a good introduction to documenting your code in this way at <a class="reference external" href="https://alvinalexander.com/java/edu/pj/pj010014">https://alvinalexander.com/java/edu/pj/pj010014</a>.</p>
 </div>
-</div>
-<div class="section" id="abstract-classes-and-methods">
-<h3>Abstract Classes and Methods<a class="headerlink" href="#abstract-classes-and-methods" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class, as shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a> , contains a keyword which you most likely have not yet encountered: <code class="docutils literal"><span class="pre">abstract</span></code>. This keyword will allow you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code in a more logical way.</p>
+</section>
+<section id="abstract-classes-and-methods">
+<h3>Abstract Classes and Methods<a class="headerlink" href="#abstract-classes-and-methods" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> class, as shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a> , contains a keyword which you most likely have not yet encountered: <code class="docutils literal notranslate"><span class="pre">abstract</span></code>. This keyword will allow you to use to use <strong>object-oriented programming (OOP)</strong> to organize your code in a more logical way.</p>
 <p>You have learned that there are several different rules which can be used to
 calculate Riemann sums, such as the left hand rule, right hand rule, and
 trapezoid rule. Thinking of a Riemann sum as the sum of many small slices of
@@ -260,54 +111,57 @@ same; given the endpoints of the interval on which to calculate the sum and
 the number of slices, the calculation can always be divided into the following
 steps:</p>
 <ol class="arabic simple">
-<li>Calculate <span class="math">\(\Delta x\)</span> (the width of each subinterval) from the
-endpoints of the interval and the number of slices.</li>
-<li>Determine the endpoints of each subinterval.</li>
-<li>Calculate the area of each slice.</li>
-<li>Add up the areas to find the total area.</li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(\Delta x\)</span> (the width of each subinterval) from the
+endpoints of the interval and the number of slices.</p></li>
+<li><p>Determine the endpoints of each subinterval.</p></li>
+<li><p>Calculate the area of each slice.</p></li>
+<li><p>Add up the areas to find the total area.</p></li>
 </ol>
 <p>Notice that only the third step—calculating the area of each slice—depends upon the specific rule being used; the others are the same regardless of the rule.</p>
-<div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" width="95%" /></a>
-<p class="caption"><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum. While the slices’ shapes are different, they exist over the same subintervals in each diagram.</span></p>
-</div>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/fig3.svg"><img alt="../../_images/fig3.svg" src="../../_images/fig3.svg" style="width: 95%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Here, three different rules are being used to calculate the same Riemann sum. While the slices’ shapes are different, they exist over the same subintervals in each diagram.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Fortunately, Java provides a convenient means of structuring classes which
 are mostly the same but differ with respect to certain functions:
 <strong>inheritance</strong>. You will discuss this concept in class, and the following
 pages are recommended for reference:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Tutorial</a></p></li>
 </ul>
-<p>As shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a>, the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> class which you will create will be an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal"><span class="pre">new</span> <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as <strong>extended classes</strong> or <strong>subclasses</strong>) of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you will end up with a structure where <code class="docutils literal"><span class="pre">RightHandPlot</span></code> and <code class="docutils literal"><span class="pre">LeftHandPlot</span></code>, both child classes of <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their implementations of <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal"><span class="pre">drawSlice()</span></code>, since these are the only methods whose functionality should depend on the rule.</p>
+<p>As shown in the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a>, the <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> class which you will create will be an <strong>abstract class</strong>. As such, you will never directly construct a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">AbstractRiemann()</span></code>; instead, you will create <strong>child classes</strong> (also known as <strong>extended classes</strong> or <strong>subclasses</strong>) of <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> for each Riemann sum rule. In this way, you will end up with a structure where <code class="docutils literal notranslate"><span class="pre">RightHandPlot</span></code> and <code class="docutils literal notranslate"><span class="pre">LeftHandPlot</span></code>, both child classes of <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>, share most methods, differing only in their implementations of <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal notranslate"><span class="pre">drawSlice()</span></code>, since these are the only methods whose functionality should depend on the rule.</p>
 <p>See the <a class="reference external" href="../../_static/riemann-javadoc/package-summary.html">Riemann Sum JavaDoc</a> to see how the abstract class is different from the child classes.</p>
-<p>For example, this is what a fictional rule called <code class="docutils literal"><span class="pre">OvalPlot</span></code> could look like:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OvalPlot</span> <span class="kd">extends</span> <span class="n">AbstractRiemann</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSubintervalArea</span><span class="o">(</span><span class="n">Polynomial</span> <span class="n">poly</span><span class="o">,</span> <span class="kt">double</span> <span class="n">leftBorder</span><span class="o">,</span> <span class="kt">double</span> <span class="n">rightBorder</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// return the area of an ellipse whose width is (rightBorder - leftBorder)</span>
-        <span class="c1">// and whose height is the polynomial evaluated at leftBorder</span>
-    <span class="o">}</span>
+<p>For example, this is what a fictional rule called <code class="docutils literal notranslate"><span class="pre">OvalPlot</span></code> could look like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OvalPlot</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractRiemann</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSubintervalArea</span><span class="p">(</span><span class="n">Polynomial</span><span class="w"> </span><span class="n">poly</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">leftBorder</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rightBorder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// return the area of an ellipse whose width is (rightBorder - leftBorder)</span>
+<span class="w">        </span><span class="c1">// and whose height is the polynomial evaluated at leftBorder</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">drawSlice</span><span class="o">(</span><span class="n">PlotFrame</span> <span class="n">pframe</span><span class="o">,</span> <span class="n">Polynomial</span> <span class="n">poly</span><span class="o">,</span> <span class="kt">double</span> <span class="n">leftBorder</span><span class="o">,</span> <span class="kt">double</span> <span class="n">rightBorder</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// draw an ellipse whose width is (rightBorder - leftBorder)</span>
-        <span class="c1">// and whose height is the polynomial evaluated at leftBorder</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">drawSlice</span><span class="p">(</span><span class="n">PlotFrame</span><span class="w"> </span><span class="n">pframe</span><span class="p">,</span><span class="w"> </span><span class="n">Polynomial</span><span class="w"> </span><span class="n">poly</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">leftBorder</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rightBorder</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// draw an ellipse whose width is (rightBorder - leftBorder)</span>
+<span class="w">        </span><span class="c1">// and whose height is the polynomial evaluated at leftBorder</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>As shown in <code class="docutils literal"><span class="pre">OvalPlot</span></code>, you do not have to reimplement all of the
-methods in <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
+<p>As shown in <code class="docutils literal notranslate"><span class="pre">OvalPlot</span></code>, you do not have to reimplement all of the
+methods in <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>. Only the abstract methods should be
 written out in the subclasses.</p>
-</div>
-</div>
-<div class="section" id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Link to this heading">¶</a></h2>
 <p>Remember to <strong>document as you go.</strong> Each method you write should
 have a documentation comment (ideally in the JavaDoc format)
 before it:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * [DESCRIPTION OF WHAT THE METHOD DOES]</span>
 <span class="cm"> *</span>
 <span class="cm"> * @param left [DESCRIPTION OF THE &#39;left&#39; PARAMETER]</span>
@@ -315,179 +169,183 @@ before it:</p>
 <span class="cm"> * @param subintervals [DESCRIPION OF THE &#39;subintervals&#39; PARAMETER]</span>
 <span class="cm"> * @return [DESCRIPTION OF WHAT THE METHOD RETURNS]</span>
 <span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">double</span> <span class="nf">calculateDeltaX</span><span class="o">(</span><span class="kt">double</span> <span class="n">left</span><span class="o">,</span> <span class="kt">double</span> <span class="n">right</span><span class="o">,</span> <span class="kt">int</span> <span class="n">subintervals</span><span class="o">)</span> <span class="o">{</span>
-    <span class="c1">// the actual method</span>
-<span class="o">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculateDeltaX</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">subintervals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// the actual method</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="base-assignment">
-<h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="base-assignment">
+<h2>Base Assignment<a class="headerlink" href="#base-assignment" title="Link to this heading">¶</a></h2>
 <p>You will write a total of <strong>eight</strong> Java classes for the base assignment. Together, they will demonstrate three Riemann variations: Righthand Rule, Lefthand Rule, and Trapezoid Rule.</p>
 <p>See the <a class="reference external" href="../../_static/riemann-javadoc/package-summary.html">Riemann Sum JavaDoc</a> for an overview of all the classes in this project.</p>
-<div class="section" id="create-a-package-namespace">
-<h3>1. Create a Package Namespace<a class="headerlink" href="#create-a-package-namespace" title="Permalink to this headline">¶</a></h3>
+<section id="create-a-package-namespace">
+<h3>1. Create a Package Namespace<a class="headerlink" href="#create-a-package-namespace" title="Link to this heading">¶</a></h3>
 <p>A good way to organize all the projects you will do this year is by creating a separate package namespace for each.</p>
 <div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
+<p class="admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create a package namespace to hold your project.</p>
 <ol class="arabic simple">
-<li>In src, right-click to get the option menu.</li>
-<li>Select New…Package</li>
-<li>Name it <code class="docutils literal"><span class="pre">com.[yourname].riemann</span></code> (E.g. if your name is Kim Cheng, name it <code class="docutils literal"><span class="pre">com.kimcheng.riemann</span></code>)</li>
+<li><p>In src, right-click to get the option menu.</p></li>
+<li><p>Select New…Package</p></li>
+<li><p>Name it <code class="docutils literal notranslate"><span class="pre">com.[yourname].riemann</span></code> (E.g. if your name is Kim Cheng, name it <code class="docutils literal notranslate"><span class="pre">com.kimcheng.riemann</span></code>)</p></li>
 </ol>
 <p>When your folder looks like the following you are done with this exercise:</p>
-<div class="last figure align-center">
+<figure class="align-center">
 <img alt="../../_images/packagenamespace.png" src="../../_images/packagenamespace.png" />
+</figure>
 </div>
-</div>
-</div>
-<div class="section" id="abstractriemann-class">
-<h3>2. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="abstractriemann-class">
+<h3>2. AbstractRiemann Class<a class="headerlink" href="#abstractriemann-class" title="Link to this heading">¶</a></h3>
 <div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
+<p class="admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Create an abstract class that has logic common to all Riemann rules.</p>
-<ol class="last arabic simple">
-<li>In <code class="docutils literal"><span class="pre">com.[yourname].riemann</span></code> create the <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> abstract class based on the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a> .</li>
-<li>Create all the attributes: poly, plotFrame, xLower, xUpper, and subintervals.</li>
-<li>Create a constructor.</li>
-<li>Write the non-abstract methods: <code class="docutils literal"><span class="pre">calculateDeltaX()</span></code>, <code class="docutils literal"><span class="pre">getIntervalArea()</span></code>, <code class="docutils literal"><span class="pre">drawRiemannSlices()</span></code>, <code class="docutils literal"><span class="pre">plotPolynomial()</span></code>, <code class="docutils literal"><span class="pre">plotAccFnc()</span></code>, and <code class="docutils literal"><span class="pre">configPlotFrame()</span></code>.</li>
-<li>For the accumulation function, <code class="docutils literal"><span class="pre">plotAccFnc()</span></code>, note that it graphs how the area grows with increasing <span class="math">\(x\)</span>. See <a class="reference download internal" href="../../_downloads/RiemannSumSlides.pdf" download=""><code class="xref download docutils literal"><span class="pre">Area</span> <span class="pre">Under</span> <span class="pre">a</span> <span class="pre">Curve</span> <span class="pre">Slides</span></code></a> for a deeper explanation of the accumulation function.</li>
-<li>Add stubs for the the abstract methods <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal"><span class="pre">drawSlice()</span></code>. Make sure to mark them as <code class="docutils literal"><span class="pre">abstract</span></code> and end the line with a semicolon instead of implementing the method.</li>
-</ol>
-</div>
-</div>
-<div class="section" id="righthandplot-lefthandplot-and-trapezoidplot">
-<h3>3. RightHandPlot, LeftHandPlot and TrapezoidPlot<a class="headerlink" href="#righthandplot-lefthandplot-and-trapezoidplot" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
-<p><strong>Summary</strong>: Create object classes for various Riemann rules.</p>
-<ol class="last arabic simple">
-<li>In your <code class="docutils literal"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal"><span class="pre">RightHandPlot</span></code>, <code class="docutils literal"><span class="pre">LeftHandPlot</span></code>, and <code class="docutils literal"><span class="pre">TrapezoidPlot</span></code>, each extending <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>.</li>
-<li>Each rule should implement the abstract methods <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal"><span class="pre">drawSlice()</span></code>. Do not include implementations of any other methods from <code class="docutils literal"><span class="pre">AbstractRiemann</span></code>; they will be automatically inherited.</li>
-<li>For <code class="docutils literal"><span class="pre">drawSlice()</span></code>, make sure the plots correspond to the specific rules. Note: You don’t need to fill in the trapezoids for <code class="docutils literal"><span class="pre">TrapezoidPlot</span></code>.</li>
-</ol>
-</div>
-</div>
-<div class="section" id="test-classes">
-<h3>4. Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
-<p><strong>Summary</strong>: Test the Riemann <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> methods.</p>
 <ol class="arabic simple">
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">RightHandPlotTest</span></code> and add a test method called <code class="docutils literal"><span class="pre">slice</span></code> that does the following:</li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">com.[yourname].riemann</span></code> create the <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> abstract class based on the <a class="reference external" href="../../_static/riemann-javadoc/AbstractRiemann.html">AbstractRiemann JavaDoc</a> .</p></li>
+<li><p>Create all the attributes: poly, plotFrame, xLower, xUpper, and subintervals.</p></li>
+<li><p>Create a constructor.</p></li>
+<li><p>Write the non-abstract methods: <code class="docutils literal notranslate"><span class="pre">calculateDeltaX()</span></code>, <code class="docutils literal notranslate"><span class="pre">getIntervalArea()</span></code>, <code class="docutils literal notranslate"><span class="pre">drawRiemannSlices()</span></code>, <code class="docutils literal notranslate"><span class="pre">plotPolynomial()</span></code>, <code class="docutils literal notranslate"><span class="pre">plotAccFnc()</span></code>, and <code class="docutils literal notranslate"><span class="pre">configPlotFrame()</span></code>.</p></li>
+<li><p>For the accumulation function, <code class="docutils literal notranslate"><span class="pre">plotAccFnc()</span></code>, note that it graphs how the area grows with increasing <span class="math notranslate nohighlight">\(x\)</span>. See <a class="reference download internal" download="" href="../../_downloads/35e97a57a76d12a87c46207a9ce41312/RiemannSumSlides.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Area</span> <span class="pre">Under</span> <span class="pre">a</span> <span class="pre">Curve</span> <span class="pre">Slides</span></code></a> for a deeper explanation of the accumulation function.</p></li>
+<li><p>Add stubs for the the abstract methods <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal notranslate"><span class="pre">drawSlice()</span></code>. Make sure to mark them as <code class="docutils literal notranslate"><span class="pre">abstract</span></code> and end the line with a semicolon instead of implementing the method.</p></li>
+</ol>
+</div>
+</section>
+<section id="righthandplot-lefthandplot-and-trapezoidplot">
+<h3>3. RightHandPlot, LeftHandPlot and TrapezoidPlot<a class="headerlink" href="#righthandplot-lefthandplot-and-trapezoidplot" title="Link to this heading">¶</a></h3>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p><strong>Summary</strong>: Create object classes for various Riemann rules.</p>
+<ol class="arabic simple">
+<li><p>In your <code class="docutils literal notranslate"><span class="pre">riemann</span></code> package, create three child classes: <code class="docutils literal notranslate"><span class="pre">RightHandPlot</span></code>, <code class="docutils literal notranslate"><span class="pre">LeftHandPlot</span></code>, and <code class="docutils literal notranslate"><span class="pre">TrapezoidPlot</span></code>, each extending <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>.</p></li>
+<li><p>Each rule should implement the abstract methods <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> and <code class="docutils literal notranslate"><span class="pre">drawSlice()</span></code>. Do not include implementations of any other methods from <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code>; they will be automatically inherited.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">drawSlice()</span></code>, make sure the plots correspond to the specific rules. Note: You don’t need to fill in the trapezoids for <code class="docutils literal notranslate"><span class="pre">TrapezoidPlot</span></code>.</p></li>
+</ol>
+</div>
+</section>
+<section id="test-classes">
+<h3>4. Test Classes<a class="headerlink" href="#test-classes" title="Link to this heading">¶</a></h3>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p><strong>Summary</strong>: Test the Riemann <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> methods.</p>
+<ol class="arabic simple">
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal notranslate"><span class="pre">RightHandPlotTest</span></code> and add a test method called <code class="docutils literal notranslate"><span class="pre">slice</span></code> that does the following:</p></li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li>Creates a Polynomial (first import <code class="docutils literal"><span class="pre">org.dalton.polyfun.Polynomial</span></code>). E.g.,</li>
+<li><p>Creates a Polynomial (first import <code class="docutils literal notranslate"><span class="pre">org.dalton.polyfun.Polynomial</span></code>). E.g.,</p></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">Polynomial</span> <span class="n">poly</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Polynomial</span><span class="o">(</span><span class="k">new</span> <span class="kt">double</span><span class="o">[]{</span><span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">2</span><span class="o">});</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Polynomial</span><span class="w"> </span><span class="n">poly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Polynomial</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="o">[]</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Creates a <code class="docutils literal"><span class="pre">RightHandPlot</span></code> object. E.g.,</li>
+<li><p>Creates a <code class="docutils literal notranslate"><span class="pre">RightHandPlot</span></code> object. E.g.,</p></li>
 </ul>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">RightHandPlot</span> <span class="n">rightHandPlot</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RightHandPlot</span><span class="o">(</span><span class="n">poly</span><span class="o">,</span> <span class="k">new</span> <span class="n">PlotFrame</span><span class="o">(</span><span class="s">&quot;x&quot;</span><span class="o">,</span> <span class="s">&quot;y&quot;</span><span class="o">,</span> <span class="s">&quot;Right Hand Rule&quot;</span><span class="o">),</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">RightHandPlot</span><span class="w"> </span><span class="n">rightHandPlot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RightHandPlot</span><span class="p">(</span><span class="n">poly</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PlotFrame</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Right Hand Rule&quot;</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>Asserts that the object’s <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> returns the correct area of the rectangle under the given Polynomial between two <span class="math">\(x\)</span> values. You can check what the Riemann sum should be using a <a class="reference external" href="https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/">Riemann Sum Calculator</a>.</li>
+<li><p>Asserts that the object’s <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> returns the correct area of the rectangle under the given Polynomial between two <span class="math notranslate nohighlight">\(x\)</span> values. You can check what the Riemann sum should be using a <a class="reference external" href="https://www.emathhelp.net/calculators/calculus-2/riemann-sum-calculator/">Riemann Sum Calculator</a>.</p></li>
 </ul>
 </div></blockquote>
-<p>You may add more test methods as you see fit. When you are certain <code class="docutils literal"><span class="pre">RightHandPlot</span></code>’s <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code> method works, test the other rules:</p>
+<p>You may add more test methods as you see fit. When you are certain <code class="docutils literal notranslate"><span class="pre">RightHandPlot</span></code>’s <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code> method works, test the other rules:</p>
 <ol class="arabic simple">
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">LeftHandPlotTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">LeftHandPlot</span></code>’s <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code>.</li>
-<li>In the <code class="docutils literal"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal"><span class="pre">TrapezoidPlotTest</span></code> that contains at least one method to test <code class="docutils literal"><span class="pre">TrapezoidPlot</span></code>’s <code class="docutils literal"><span class="pre">getSubintervalArea()</span></code>.</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal notranslate"><span class="pre">LeftHandPlotTest</span></code> that contains at least one method to test <code class="docutils literal notranslate"><span class="pre">LeftHandPlot</span></code>’s <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code>.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">test</span></code> folder, create a class called <code class="docutils literal notranslate"><span class="pre">TrapezoidPlotTest</span></code> that contains at least one method to test <code class="docutils literal notranslate"><span class="pre">TrapezoidPlot</span></code>’s <code class="docutils literal notranslate"><span class="pre">getSubintervalArea()</span></code>.</p></li>
 </ol>
-<p class="last">When all the test methods pass you are done with this exercise.</p>
+<p>When all the test methods pass you are done with this exercise.</p>
 </div>
-</div>
-<div class="section" id="riemannapp">
-<h3>5. RiemannApp<a class="headerlink" href="#riemannapp" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="riemannapp">
+<h3>5. RiemannApp<a class="headerlink" href="#riemannapp" title="Link to this heading">¶</a></h3>
 <div class="admonition-exercise admonition">
-<p class="first admonition-title">Exercise</p>
+<p class="admonition-title">Exercise</p>
 <p><strong>Summary</strong>: Plot the Riemann rules.</p>
 <ol class="arabic simple">
-<li>Back in the <code class="docutils literal"><span class="pre">riemann</span></code> package, create <code class="docutils literal"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</li>
-<li>Create an example Polynomial to find the area under. E.g., <span class="math">\(3x^2-6x+3\)</span>. See the <a class="reference external" href="../../_static/polyfun-javadoc/org/dalton/polyfun/Polynomial.html">Polynomial JavaDoc</a>  for how to construct a Polynomial.</li>
-<li>For each plot object use <code class="docutils literal"><span class="pre">drawRiemannSlices()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,</li>
+<li><p>Back in the <code class="docutils literal notranslate"><span class="pre">riemann</span></code> package, create <code class="docutils literal notranslate"><span class="pre">RiemannApp</span></code>, which will have a <code class="docutils literal notranslate"><span class="pre">main</span></code> method and be responsible for plotting example Polynomials, Riemann rectangles, and printing the estimated area.</p></li>
+<li><p>Create an example Polynomial to find the area under. E.g., <span class="math notranslate nohighlight">\(3x^2-6x+3\)</span>. See the <a class="reference external" href="../../_static/polyfun-javadoc/org/dalton/polyfun/Polynomial.html">Polynomial JavaDoc</a>  for how to construct a Polynomial.</p></li>
+<li><p>For each plot object use <code class="docutils literal notranslate"><span class="pre">drawRiemannSlices()</span></code> to plot rectangles under the example Polynomial onto the cooresponding PlotFrame. E.g.,</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">rightHandPlot</span><span class="o">.</span><span class="na">drawRiemannSums</span><span class="o">();</span>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">rightHandPlot</span><span class="p">.</span><span class="na">drawRiemannSums</span><span class="p">();</span>
 </pre></div>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li>Also on each PlotFrame, call <code class="docutils literal"><span class="pre">plotPolynomial()</span></code> to plot the example Polynomial so you can see the line in relation to the rectangles.</li>
-<li>Plot the accumulation function using <code class="docutils literal"><span class="pre">plotAccFnc()</span></code>.</li>
-<li>Finally, for each rule, print the estimated area under the curve.</li>
+<li><p>Also on each PlotFrame, call <code class="docutils literal notranslate"><span class="pre">plotPolynomial()</span></code> to plot the example Polynomial so you can see the line in relation to the rectangles.</p></li>
+<li><p>Plot the accumulation function using <code class="docutils literal notranslate"><span class="pre">plotAccFnc()</span></code>.</p></li>
+<li><p>Finally, for each rule, print the estimated area under the curve.</p></li>
 </ol>
 <p>When your RiemannApp (1) prints estimated areas of a polynomial for each of the rules, (2) plots each rule and (3) plots each accumulation function you are done with this exercise.</p>
 <p>Example output:</p>
 <ol class="arabic simple">
-<li>Estimated areas of a polynomial:</li>
+<li><p>Estimated areas of a polynomial:</p></li>
 </ol>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/00sum.png"><img alt="../../_images/00sum.png" src="../../_images/00sum.png" style="width: 80%;" /></a>
-</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/00sum.png"><img alt="../../_images/00sum.png" src="../../_images/00sum.png" style="width: 80%;" />
+</a>
+</figure>
 <ol class="arabic simple" start="2">
-<li>Plots for each rule. The accumulation function is shown in green:</li>
+<li><p>Plots for each rule. The accumulation function is shown in green:</p></li>
 </ol>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/07lhrtogether.png"><img alt="../../_images/07lhrtogether.png" src="../../_images/07lhrtogether.png" style="width: 50%;" /></a>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/07lhrtogether.png"><img alt="../../_images/07lhrtogether.png" src="../../_images/07lhrtogether.png" style="width: 50%;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/08rhrtogether.png"><img alt="../../_images/08rhrtogether.png" src="../../_images/08rhrtogether.png" style="width: 50%;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/09trtogether.png"><img alt="../../_images/09trtogether.png" src="../../_images/09trtogether.png" style="width: 50%;" />
+</a>
+</figure>
 </div>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/08rhrtogether.png"><img alt="../../_images/08rhrtogether.png" src="../../_images/08rhrtogether.png" style="width: 50%;" /></a>
-</div>
-<div class="last figure align-center">
-<a class="reference internal image-reference" href="../../_images/09trtogether.png"><img alt="../../_images/09trtogether.png" src="../../_images/09trtogether.png" style="width: 50%;" /></a>
-</div>
-</div>
-</div>
-<div class="section" id="analysis">
-<h3>6. Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="analysis">
+<h3>6. Analysis<a class="headerlink" href="#analysis" title="Link to this heading">¶</a></h3>
 <p>Use your program to answer the following question: <strong>which of the three rules is the most accurate?</strong> This should compare the results of the Riemann sums with the actual area under the curve (use this <a class="reference external" href="https://www.integral-calculator.com">Integral Calculator</a> to get the actual value).</p>
 <blockquote>
 <div><div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>Remember to account for the following edge cases:</p>
-<ul class="last simple">
-<li>The value of the polynomial for a given <span class="math">\(x\)</span> is negative.</li>
-<li>The left endpoint is greater than the right endpoint.</li>
+<ul class="simple">
+<li><p>The value of the polynomial for a given <span class="math notranslate nohighlight">\(x\)</span> is negative.</p></li>
+<li><p>The left endpoint is greater than the right endpoint.</p></li>
 </ul>
 </div>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="extension">
-<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="extension">
+<h2>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h2>
 <p>The three Riemann sum rules which you have seen so far (the right hand rule,
 left hand rule, and trapezoid rule) tend to yield good approximations of the
-area under a curve provided that <span class="math">\(\Delta x\)</span> is small enough. However,
+area under a curve provided that <span class="math notranslate nohighlight">\(\Delta x\)</span> is small enough. However,
 they are not the only rules.</p>
 <p>For your extension, research different Riemann sum rules and write classes for
 them in the same style as the base assignment. Below are some suggested
 extensions that students have done in the past:</p>
 <ul class="simple">
-<li><strong>Maximum rule</strong> - Use the polynomial’s value at the left endpoint or at the
-right endpoint, whichever is greater.</li>
-<li><strong>Minimum rule</strong> - Use the polynomial’s value at the left endpoint or at the
-right endpoint, whichever is lesser.</li>
-<li><strong>Random rule</strong> - Randomly choose <span class="math">\(x\)</span> within the subinterval at which
-to evaluate the polynomial.</li>
-<li><strong>Midpoint rule</strong> - Evaluate the polynomial at the mean of the endpoints.</li>
-<li><strong>Simpson’s rule</strong> - This is more involved than the other options but
+<li><p><strong>Maximum rule</strong> - Use the polynomial’s value at the left endpoint or at the
+right endpoint, whichever is greater.</p></li>
+<li><p><strong>Minimum rule</strong> - Use the polynomial’s value at the left endpoint or at the
+right endpoint, whichever is lesser.</p></li>
+<li><p><strong>Random rule</strong> - Randomly choose <span class="math notranslate nohighlight">\(x\)</span> within the subinterval at which
+to evaluate the polynomial.</p></li>
+<li><p><strong>Midpoint rule</strong> - Evaluate the polynomial at the mean of the endpoints.</p></li>
+<li><p><strong>Simpson’s rule</strong> - This is more involved than the other options but
 is also the most interesting—and often gives better approximations. It
-will take some outside research.</li>
+will take some outside research.</p></li>
 </ul>
 <p>There is also the option to create a command-line <strong>user interface</strong> which
 makes it easier to learn from your program. Even if you decide not to dedicate
 a lot of time to making an interface, you should at least have some way for a
 user to run your program with desired parameters without having to directly
 edit the code first.</p>
-</div>
-<div class="section" id="advanced-extensions">
-<h2>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="advanced-extensions">
+<h2>Advanced Extensions<a class="headerlink" href="#advanced-extensions" title="Link to this heading">¶</a></h2>
 <p>The following possible (optional) extensions are more advanced, either from a
 mathematics or a computer science perspective.</p>
 <p><strong>Calculate an approximation of pi</strong>. Hint: use the equation for a
@@ -495,123 +353,160 @@ circle in cartesian coordinates to calculate the area under a semicircle.</p>
 <p><strong>Write a class which approximates arc length</strong>: if, when graphed, a function
 produces a curve, then calculate the length of that curve in a given
 subinterval Hint: instead of breaking up an area into rectangles, break up the
-curve into line segments. You will need the distance formula <span class="math">\(r =
-\sqrt{\Delta x ^ 2 + \Delta y ^ 2}\)</span> and the Java function <code class="docutils literal"><span class="pre">Math.sqrt()</span></code> to
+curve into line segments. You will need the distance formula <span class="math notranslate nohighlight">\(r =
+\sqrt{\Delta x ^ 2 + \Delta y ^ 2}\)</span> and the Java function <code class="docutils literal notranslate"><span class="pre">Math.sqrt()</span></code> to
 calculate the length of each segment.</p>
-<div class="figure align-center" id="id7">
-<a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" width="60%" /></a>
-<p class="caption"><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
-smaller arcs with segments.</span></p>
-</div>
-<p><strong>Write a version of</strong> <code class="docutils literal"><span class="pre">AbstractRiemann</span></code> <strong>called</strong> <code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/fig4.svg"><img alt="../../_images/fig4.svg" src="../../_images/fig4.svg" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">Arc length can be approximated by dividing the curve and replacing the
+smaller arcs with segments.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Write a version of</strong> <code class="docutils literal notranslate"><span class="pre">AbstractRiemann</span></code> <strong>called</strong> <code class="docutils literal notranslate"><span class="pre">AbstractRiemannExtended</span></code>
 <strong>which supports arbitrary non-polynomial
 functions</strong>. So far, we have only worked with polynomials. However, it is
 possible to calculate the area under other functions as well—calculating
 the area of a semicircle is an example of this. The hardest part will be
 representing arbitrary real-valued functions as Java objects:</p>
 <ul>
-<li><p class="first">One option is to write an abstract class called <code class="docutils literal"><span class="pre">Function</span></code> with a
-single abstract method called <code class="docutils literal"><span class="pre">evaluate()</span></code> which takes a <code class="docutils literal"><span class="pre">double</span></code> and
-returns a <code class="docutils literal"><span class="pre">double</span></code>. Subclasses of <code class="docutils literal"><span class="pre">Function</span></code> will contain
-implementations of <code class="docutils literal"><span class="pre">evaluate()</span></code> which calculate the value of the function
-for a given <span class="math">\(x\)</span>. Replace <code class="docutils literal"><span class="pre">Polynomial</span></code> with <code class="docutils literal"><span class="pre">Function</span></code> throughout
-<code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="../../_images/function-diagram.png"><img alt="../../_images/function-diagram.png" src="../../_images/function-diagram.png" style="width: 95%;" /></a>
-</div>
+<li><p>One option is to write an abstract class called <code class="docutils literal notranslate"><span class="pre">Function</span></code> with a
+single abstract method called <code class="docutils literal notranslate"><span class="pre">evaluate()</span></code> which takes a <code class="docutils literal notranslate"><span class="pre">double</span></code> and
+returns a <code class="docutils literal notranslate"><span class="pre">double</span></code>. Subclasses of <code class="docutils literal notranslate"><span class="pre">Function</span></code> will contain
+implementations of <code class="docutils literal notranslate"><span class="pre">evaluate()</span></code> which calculate the value of the function
+for a given <span class="math notranslate nohighlight">\(x\)</span>. Replace <code class="docutils literal notranslate"><span class="pre">Polynomial</span></code> with <code class="docutils literal notranslate"><span class="pre">Function</span></code> throughout
+<code class="docutils literal notranslate"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../_images/function-diagram.png"><img alt="../../_images/function-diagram.png" src="../../_images/function-diagram.png" style="width: 95%;" />
+</a>
+</figure>
 </li>
-<li><p class="first">A cleaner but more advanced way of representing functions is to use
-Java 8 <strong>lambda expressions</strong> and <code class="docutils literal"><span class="pre">DoubleUnaryOperator</span></code>.
-Replace <code class="docutils literal"><span class="pre">Polynomial</span></code> with <code class="docutils literal"><span class="pre">DoubleUnaryOperator</span></code> throughout
-<code class="docutils literal"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.
+<li><p>A cleaner but more advanced way of representing functions is to use
+Java 8 <strong>lambda expressions</strong> and <code class="docutils literal notranslate"><span class="pre">DoubleUnaryOperator</span></code>.
+Replace <code class="docutils literal notranslate"><span class="pre">Polynomial</span></code> with <code class="docutils literal notranslate"><span class="pre">DoubleUnaryOperator</span></code> throughout
+<code class="docutils literal notranslate"><span class="pre">AbstractRiemannExtended</span></code> and its subclasses.
 This is an example of how those features could be used:</p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// f(x) = sin(x) + cos(x) / 2</span>
-<span class="n">DoubleUnaryOperator</span> <span class="n">f</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">Math</span><span class="o">.</span><span class="na">sin</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">+</span> <span class="n">Math</span><span class="o">.</span><span class="na">cos</span><span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">/</span> <span class="mi">2</span><span class="o">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// f(x) = sin(x) + cos(x) / 2</span>
+<span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 
 <span class="c1">// Print f(4.9)</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">applyAsDouble</span><span class="o">(</span><span class="mf">4.9</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="na">applyAsDouble</span><span class="p">(</span><span class="mf">4.9</span><span class="p">));</span>
 
 <span class="c1">// g(x) = poly.evaluateToNumber(x)</span>
-<span class="n">DoubleUnaryOperator</span> <span class="n">g</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">poly</span><span class="o">.</span><span class="na">evaluateToNumber</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+<span class="n">DoubleUnaryOperator</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">poly</span><span class="p">.</span><span class="na">evaluateToNumber</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
 
 <span class="c1">// Print g(-2)</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">g</span><span class="o">.</span><span class="na">applyAsDouble</span><span class="o">(-</span><span class="mi">2</span><span class="o">));</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">g</span><span class="p">.</span><span class="na">applyAsDouble</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">));</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="further-resources">
-<h2>Further Resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="java-computer-science">
-<h3>Java/Computer Science<a class="headerlink" href="#java-computer-science" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="further-resources">
+<h2>Further Resources<a class="headerlink" href="#further-resources" title="Link to this heading">¶</a></h2>
+<section id="java-computer-science">
+<h3>Java/Computer Science<a class="headerlink" href="#java-computer-science" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Classes and Methods</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html">Oracle - Interfaces</a></li>
-<li><a class="reference external" href="https://www.freecodecamp.org/news/learn-these-4-things-and-working-with-lambda-expressions-b0ab36e0fffc/">freeCodeCamp.org - Lambda Expressions</a></li>
-<li><a class="reference external" href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html">Math JavaDoc</a>
-for the <code class="docutils literal"><span class="pre">Math</span></code> class - contains useful mathematical functions such as
-<code class="docutils literal"><span class="pre">Math.sin()</span></code> and <code class="docutils literal"><span class="pre">Math.sqrt()</span></code>.</li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Oracle - Inheritance</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html">Oracle - Abstract Classes and Methods</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html">Oracle - Interfaces</a></p></li>
+<li><p><a class="reference external" href="https://www.freecodecamp.org/news/learn-these-4-things-and-working-with-lambda-expressions-b0ab36e0fffc/">freeCodeCamp.org - Lambda Expressions</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/lang/Math.html">Math JavaDoc</a>
+for the <code class="docutils literal notranslate"><span class="pre">Math</span></code> class - contains useful mathematical functions such as
+<code class="docutils literal notranslate"><span class="pre">Math.sin()</span></code> and <code class="docutils literal notranslate"><span class="pre">Math.sqrt()</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="math">
-<h3>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="math">
+<h3>Math<a class="headerlink" href="#math" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://www.wolframalpha.com/">Wolfram Alpha</a> - Can be used to calculate exact values of
-Riemann sums including arc lengths.</li>
+<li><p><a class="reference external" href="https://www.wolframalpha.com/">Wolfram Alpha</a> - Can be used to calculate exact values of
+Riemann sums including arc lengths.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../3-projectile/projectile.html" class="btn btn-neutral float-right" title="Projectile Assignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../1-getting-started/getting-started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">The CSX Book</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
     </div>
-  
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Assignments:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1-getting-started/getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Riemann Sums</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#approximating-area-under-a-curve">Approximating Area Under a Curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classes-and-methods">Classes and Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment">Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-assignment">Base Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-extensions">Advanced Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#further-resources">Further Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3-projectile/projectile.html">Projectile Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-matrix/matrix.html">Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5-springs/springs.html">Springs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6-orbital/orbital.html">Orbitals</a></li>
+</ul>
 
-  <hr/>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../1-getting-started/getting-started.html" title="previous chapter">Getting Started</a></li>
+      <li>Next: <a href="../3-projectile/projectile.html" title="next chapter">Projectile Assignment</a></li>
+  </ul></li>
+</ul>
+</div>
 
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, The Dalton School
 
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-</footer>
+
+
+
+
 
         </div>
       </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2019, The Dalton School.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../../_sources/assignments/2-riemann/riemann.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
 
-    </section>
-
-  </div>
-  
-
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
-
-  
-  
     
-   
 
-</body>
+    
+  </body>
 </html>

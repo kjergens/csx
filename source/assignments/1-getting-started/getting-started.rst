@@ -296,6 +296,9 @@ Now you'll create an animation from scratch.
    #. In the **src** folder, create a new Java class called ``RandomWalkApp``.
    #. Copy and paste the ``MovingBallApp`` class as starter code. Change the ``main`` method to run ``RandomWalkApp``.
    #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
+      .. figure:: 00random_walk_single.gif 
+         :width: 50 %
+         :align: center
    #. Add 50 Circles that move in this way. 
   
    When you get output similar to the graph below you are finished with this exercise:
