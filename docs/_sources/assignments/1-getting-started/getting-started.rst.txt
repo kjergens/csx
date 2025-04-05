@@ -305,7 +305,7 @@ Now you'll create an animation from scratch.
   
    When you get output similar to the graph below you are finished with this exercise:
   
-   .. figure:: randomwalk.gif 
+   .. figure:: 01random_walk_many.gif 
       :width: 50 %
       :align: center
   
