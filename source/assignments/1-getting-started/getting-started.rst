@@ -295,7 +295,7 @@ Now you'll create an animation from scratch.
 
    #. In the **src** folder, create a new Java class called ``RandomWalkApp``.
    #. Copy and paste the ``MovingBallApp`` class as starter code. Change the ``main`` method to run ``RandomWalkApp``.
-   #. Change ``doStep`` so that ``circle`` randomly moves either 1 spot up, 1 spot down, or stays at the same y. It also randomly moves 1 spot left, 1 spot right or stays at the same x.
+   #. Change ``doStep`` so that ``circle`` randomly moves  plus or minus 0.5 pixels vertically and plus or minus 0.5 pixels horizontally.
 
    .. figure:: 00random_walk_single.gif 
       :width: 50 %
@@ -309,9 +309,9 @@ Now you'll create an animation from scratch.
       :width: 50 %
       :align: center
   
-  **HINT**: Change the global ``circle`` variable to an ``ArrayList`` of type ``Circle`` called ``circles``. 
+  **HINT**: Change the global ``circle`` variable to an ``array`` of type ``Circle`` called ``circles``. 
      
-  **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a ``for-each``-loop in ``doStep`` to move each Circle in ``circles``, and, optionally, a ``for-each``-loop in ``stop`` to print how far each Circle in ``circles`` moved.
+  **HINT**: You'll need a ``for``-loop in ``initialize`` to add 50 Circles to ``circles``, a another one in ``do-step`` to move each Circle in ``circles``.
 
 Step 4: (Advanced) Spiral Trail Animation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
