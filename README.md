@@ -3,12 +3,7 @@
 Online book for the X Class
 
 # Setup
-Make sure you have **Python 3** and **pip** installed. Run the following:
-
-    pip3 install --upgrade pip
-    pip3 install sphinx sphinx_rtd_theme
-
-(As of Apr. 4, 2025, do this:)
+Make sure you have **Python 3** and **Homebrew** installed. Run the following:
 
     brew install sphinx-doc
 
@@ -19,7 +14,7 @@ For example, to update the Riemann Sums page edit source/assignments/2-riemann/r
 
 Use Sphinx's mark-up syntax. (Look it up or use the existing files as examples.)
 
-Then build using one of the methods below. Check locally that the site looks correct before you add/commit/push to git to make it go live.
+Build using one of the methods below. Check locally that the site looks correct before you add/commit/push to git to make it go live.
 
 # Build - Method 1
 From the project directory, run
